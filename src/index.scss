@@ -1,8 +1,125 @@
+$color-white: #fff;
+$color-black: #000;
+$color-gray-light1: #dfe3e6;
+$color-gray-light2: #b8b9bb;
+$color-gray-dark: #6b808c;
+$color-green: #39c071;
+$color-shadow: rgba(9, 45, 66, 0.25);
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
+  height: 100%;
+  background-image: url('./assets/background.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.app {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+}
+
+.column {
+  flex-shrink: 0;
+  align-self: flex-start;
+  width: 272px;
+  max-height: calc(100% - 40px);
+  padding: 12px;
+  background-color: $color-gray-light1;
+  border-radius: 3px;
+}
+
+.column-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  color: $color-black;
+}
+
+.cards {
+  overflow: hidden;
+}
+
+.card {
+  padding: 8px 8px 8px 12px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  background-color: $color-white;
+  box-shadow: 0px 1px 4px $color-shadow;
+  border-radius: 3px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  color: $color-gray-dark;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  svg {
+    height: 15px;
+    width: 15px;
+    margin-right: 8px;
+  }
+
+  &-add {
+    width: 100%;
+  }
+}
+
+.btn-submit {
+  display: flex;
+  align-items: center;
+  padding: 7px 8px 4px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  color: $color-white;
+  background-color: $color-green;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  resize: none;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px 8px 8px 12px;
+  box-shadow: 0px 1px 4px $color-shadow;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    color: $color-gray-light2;
+  }
+
+  &-column {
+    height: 35px;
+  }
+
+  &-card {
+    height: 54px;
+  }
 }
