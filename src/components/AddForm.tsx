@@ -57,7 +57,10 @@ const AddForm: React.FC<AddFormProps> = ({ isAddColumn, setText }) => {
             <button type="submit" className="btn-submit">
               {isAddColumn ? 'Добавить колонку' : 'Добавить карточку'}
             </button>
-            <button onClick={() => setIsFormVisible(false)} className="btn">
+            <button
+              onClick={() => setIsFormVisible(false)}
+              className="btn btn-close"
+            >
               <CloseIcon />
             </button>
           </div>

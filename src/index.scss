@@ -39,12 +39,21 @@ body {
   border-radius: 3px;
 }
 
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
 .column-title {
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 13px;
   line-height: 19px;
   color: $color-black;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .cards {
@@ -88,6 +97,10 @@ body {
 
   &-add {
     width: 100%;
+  }
+
+  &-close svg {
+    margin-right: 0;
   }
 }
 

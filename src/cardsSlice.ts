@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { load } from 'redux-localstorage-simple';
 import type { RootState } from './store';
 
 export interface Card {
@@ -12,7 +13,9 @@ export interface Column {
   cards: Card[];
 }
 
-const initialState: Column[] = [];
+const savedCards: any = load({ namespace: 'cards' });
+const initialState: Column[] =
+  savedCards && savedCards.cards ? savedCards.cards : [];
 
 export const cardsSlice = createSlice({
   name: 'cards',
@@ -24,6 +27,12 @@ export const cardsSlice = createSlice({
         title: action.payload,
         cards: [],
       });
+    },
+    deleteColumn: (state, action: PayloadAction<string>) => {
+      state.splice(
+        state.findIndex(column => column.id === action.payload),
+        1
+      );
     },
     addNewCard: (
       state,
@@ -78,6 +87,7 @@ export const cardsSlice = createSlice({
 
 export const {
   addNewColumn,
+  deleteColumn,
   addNewCard,
   dropCardSameColumn,
   dropCardOtherColumn,
