@@ -28,17 +28,19 @@ body {
 }
 
 .column {
+  display: flex;
+  flex-direction: column;
   flex-shrink: 0;
   align-self: flex-start;
   width: 272px;
-  max-height: calc(100% - 40px);
+  max-height: calc(100vh - 40px);
   padding: 12px;
   background-color: $color-gray-light1;
   border-radius: 3px;
 }
 
 .column-title {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 13px;
   line-height: 19px;
@@ -46,7 +48,16 @@ body {
 }
 
 .cards {
-  overflow: hidden;
+  min-height: 2px;
+  flex-grow: 1;
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
 }
 
 .card {

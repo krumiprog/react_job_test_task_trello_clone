@@ -70,7 +70,7 @@ export const cardsSlice = createSlice({
       if (matchFrom && matchTo) {
         const item = { ...matchFrom[source] };
         matchFrom.splice(source, 1);
-        matchTo.splice(destination, 0, item);
+        matchTo!.splice(destination, 0, item);
       }
     },
   },
