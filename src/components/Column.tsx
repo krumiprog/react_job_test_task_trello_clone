@@ -5,22 +5,23 @@ import AddForm from './AddForm';
 import Cards from './Cards';
 
 type ColumnProps = {
-  columnIndex: number;
-  title: String;
+  id: string;
+  title: string;
   cards: Card[];
+  columnIndex: number;
 };
 
-const Column: React.FC<ColumnProps> = ({ columnIndex, title, cards }) => {
+const Column: React.FC<ColumnProps> = ({ id, title, cards, columnIndex }) => {
   const dispatch = useAppDispatch();
 
-  const setText = (content: String) => {
+  const setText = (content: string): void => {
     dispatch(addNewCard({ columnIndex, content }));
   };
 
   return (
     <div className="column">
       {title && <h2 className="column-title">{title}</h2>}
-      <Cards cards={cards} />
+      <Cards id={id} cards={cards} />
       <AddForm isAddColumn={false} setText={setText} />
     </div>
   );

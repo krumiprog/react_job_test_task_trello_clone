@@ -5,7 +5,7 @@ import AddForm from './AddForm';
 const AddColumn: React.FC<{}> = () => {
   const dispatch = useAppDispatch();
 
-  const setText = (title: String) => {
+  const setText = (title: string): void => {
     dispatch(addNewColumn(title));
   };
 

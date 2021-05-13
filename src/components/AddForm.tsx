@@ -4,7 +4,7 @@ import { ReactComponent as CloseIcon } from '../assets/cross.svg';
 
 type AddFormProps = {
   isAddColumn: boolean;
-  setText: (text: String) => void;
+  setText: (text: string) => void;
 };
 
 const AddForm: React.FC<AddFormProps> = ({ isAddColumn, setText }) => {
